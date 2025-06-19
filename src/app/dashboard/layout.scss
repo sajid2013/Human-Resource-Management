@@ -1,0 +1,61 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+.main {
+  height: 100vh;
+  display: flex;
+
+  .left {
+    padding: 16px;
+    width: 14%;
+    @media (min-width: $breakpoint-md) {
+      width: 8%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 16%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 18%;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+
+      .menu-title {
+        display: none;
+
+        @media (min-width: $breakpoint-xl) {
+          display: block;
+          color: teal;
+          font-weight: bold;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 86%;
+    background-color: #f7f8fa;
+    overflow: scroll;
+
+    @media (min-width: $breakpoint-md) {
+      width: 92%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 84%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 86%;
+    }
+  }
+}

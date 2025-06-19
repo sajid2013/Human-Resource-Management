@@ -1,0 +1,80 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #c3ebda;
+$skylight: #edf9fd;
+$purple: #cfceff;
+$purplelight: #f1f0ff;
+$yellow: #fae27c;
+$yellowlight: #fefce8;
+
+.admin-main {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+  .admin-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media (min-width: $breakpoint-lg) {
+      width: 66.666667%;
+    }
+
+    .user-card {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .middle-charts {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+
+      @media (min-width: $breakpoint-lg) {
+        flex-direction: row;
+      }
+
+      .count-chart {
+        width: 100%;
+        height: 450px;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 33.333%;
+        }
+      }
+      .attendance-chart {
+        width: 100%;
+        height: 450px;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 66.666%;
+        }
+      }
+    }
+
+    .bottom-chart{
+      width: 100%;
+      height: 500px;
+      
+    }
+  }
+  .admin-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+
+    @media (min-width: $breakpoint-lg) {
+      width: 33.333%;
+    }
+  }
+}
