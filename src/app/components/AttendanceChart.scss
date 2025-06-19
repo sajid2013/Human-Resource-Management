@@ -1,0 +1,24 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #c3ebda;
+$skylight: #edf9fd;
+$purple: #cfceff;
+$purplelight: #f1f0ff;
+$yellow: #fae27c;
+$yellowlight: #fefce8;
+
+.main-countchart {
+  background-color: white;
+  border-radius: 16px;
+  height: 100%;
+  padding: 16px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+}

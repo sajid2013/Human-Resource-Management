@@ -1,0 +1,31 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #c3ebda;
+$skylight: #edf9fd;
+$purple: #cfceff;
+$purplelight: #f1f0ff;
+$yellow: #fae27c;
+$yellowlight: #fefce8;
+
+.card-main {
+  border-radius: 16px;
+  padding: 16px;
+  flex: 1 1 0%;
+  min-width: 130px;
+
+  &:nth-child(odd) {
+    background-color: $purple;
+  }
+
+  &:nth-child(even) {
+    background-color: $yellow;
+  }
+
+  .card-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "employee-attendance-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@lordicon/element": "^1.11.0",
+    "@mui/icons-material": "^7.1.1",
+    "@mui/material": "^7.1.1",
+    "@mui/styled-engine-sc": "^7.1.1",
+    "axios": "^1.9.0",
+    "bcryptjs": "^3.0.2",
+    "bootstrap": "^5.3.6",
+    "jsonwebtoken": "^9.0.2",
+    "lord-icon-element": "^4.1.2",
+    "lottie-web": "^5.13.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.15.1",
+    "next": "14.2.2",
+    "next-auth": "^4.24.11",
+    "react": "^18",
+    "react-calendar": "^6.0.0",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "recharts": "^2.15.3",
+    "resend": "^4.5.1",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "postcss": "^8.5.4",
+    "sass": "^1.89.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
