@@ -10,36 +10,36 @@ export default function VerifyEmailPage() {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
-  const verifyUser2 = async () => {
-    try {
-      await axios.post("/api/users/verifyemail", { token });
-      setVerified(true);
-      setError(false);
-    } catch (error) {
-      setError(true);
-      console.log(error.response?.data);
-    }
-  };
+  // const verifyUser2 = async () => {
+  //   try {
+  //     await axios.post("/api/users/verifyemail", { token });
+  //     setVerified(true);
+  //     setError(false);
+  //   } catch (error) {
+  //     setError(true);
+  //     console.log(error.response?.data);
+  //   }
+  // };
 
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-  // Move useCallback above useEffect
-  const verifyUser = useCallback(() => {
-    verifyUser2();
-  }, [token]); // Only token is needed as dependency
+  // // Move useCallback above useEffect
+  // const verifyUser = useCallback(() => {
+  //   verifyUser2();
+  // }, [token]); // Only token is needed as dependency
 
-  useEffect(() => {
-    setError(false);
-    const urlToken = searchParams.get("token");
-    setToken(urlToken || "");
-  }, [searchParams]);
+  // useEffect(() => {
+  //   setError(false);
+  //   const urlToken = searchParams.get("token");
+  //   setToken(urlToken || "");
+  // }, [searchParams]);
 
-  useEffect(() => {
-    setError(false);
-    if (token.length > 0) {
-      verifyUser();
-    }
-  }, [token, verifyUser]);
+  // useEffect(() => {
+  //   setError(false);
+  //   if (token.length > 0) {
+  //     verifyUser();
+  //   }
+  // }, [token, verifyUser]);
 
   return (
     <>
