@@ -36,10 +36,6 @@ export default function VerifyEmailPage() {
     }
   }, [token]);
 
-  // After:
-  useEffect(() => {
-    verifyUser();
-  }, [verifyUser]);
   return (
     <>
       <div className="main">

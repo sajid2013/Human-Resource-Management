@@ -1,4 +1,4 @@
-// File: C:\Users\urooj.nadeem\employee-attendance-portal\src\app\layout.js
+// File: D:\GVS-Development\internee-project\Human-Resource-Management\src\app\layout.jsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
