@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./verifyemail.scss";
 import Link from "next/link";
 
@@ -17,12 +17,17 @@ export default function VerifyEmailPage() {
       setError(false);
     } catch (error) {
       setError(true);
-      console.log(error.response.data);
+      console.log(error.response?.data);
     }
   };
 
-  const searchParams = useSearchParams()
-  
+  const searchParams = useSearchParams();
+
+  // Move useCallback above useEffect
+  const verifyUser = useCallback(() => {
+    verifyUser2();
+  }, [token]); // Only token is needed as dependency
+
   useEffect(() => {
     setError(false);
     const urlToken = searchParams.get("token");
@@ -34,11 +39,8 @@ export default function VerifyEmailPage() {
     if (token.length > 0) {
       verifyUser();
     }
-  }, [token]);
+  }, [token, verifyUser]);
 
-const verifyUser = React.useCallback(() => {
-  verifyUser2()
-}, [verifyUser2, token]); // Add dependencies if needed
   return (
     <>
       <div className="main">
@@ -55,10 +57,11 @@ const verifyUser = React.useCallback(() => {
                 state="in-reveal"
                 style={{ width: "150px", height: "150px" }}
               ></lord-icon>
-              <br/><h2 type="" className="teal-btn">
-            Verified !
-          </h2>
-          <br/>
+              <br />
+              <h2 type="" className="teal-btn">
+                Verified !
+              </h2>
+              <br />
               <Link className="login" href="../login">
                 Login here
               </Link>
@@ -70,9 +73,6 @@ const verifyUser = React.useCallback(() => {
               <h2>Error</h2>
             </div>
           )}
-
-          
-          
 
           {/* Footer Links */}
           <div className="flex justify-center text-xs text-gray-400 gap-4 mt-4">
