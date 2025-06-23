@@ -80,7 +80,7 @@ export default function LoginPage() {
             {loading ? <DotLoader /> : "Login"}
           </button>
           <div className="text-center text-sm text-gray-600">
-            <div>Don't have an account?</div>
+            <p>Don&rsquo;t have an account? Sign up here.</p>
             <a href="../signup" className="login">
               Sign up
             </a>
