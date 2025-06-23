@@ -35,10 +35,10 @@ export default function VerifyEmailPage() {
       verifyUser();
     }
   }, [token]);
-  
-const verifyUser = useCallback(() => {
+
+const verifyUser = React.useCallback(() => {
   verifyUser2()
-}, [token]); // Add dependencies if needed
+}, [verifyUser2, token]); // Add dependencies if needed
   return (
     <>
       <div className="main">
