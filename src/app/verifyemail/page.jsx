@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./verifyemail.scss";
 import Link from "next/link";
 
@@ -10,31 +10,37 @@ export default function VerifyEmailPage() {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
-  const verifyUser = async () => {
-    try {
-      await axios.post("/api/users/verifyemail", { token });
-      setVerified(true);
-      setError(false);
-    } catch (error) {
-      setError(true);
-      console.log(error.response.data);
-    }
-  };
+  // const verifyUser2 = async () => {
+  //   try {
+  //     await axios.post("/api/users/verifyemail", { token });
+  //     setVerified(true);
+  //     setError(false);
+  //   } catch (error) {
+  //     setError(true);
+  //     console.log(error.response?.data);
+  //   }
+  // };
 
-  const searchParams = useSearchParams()
-  
-  useEffect(() => {
-    setError(false);
-    const urlToken = searchParams.get("token");
-    setToken(urlToken || "");
-  }, [searchParams]);
+  // const searchParams = useSearchParams();
 
-  useEffect(() => {
-    setError(false);
-    if (token.length > 0) {
-      verifyUser();
-    }
-  }, [token]);
+  // // Move useCallback above useEffect
+  // const verifyUser = useCallback(() => {
+  //   verifyUser2();
+  // }, [token]); // Only token is needed as dependency
+
+  // useEffect(() => {
+  //   setError(false);
+  //   const urlToken = searchParams.get("token");
+  //   setToken(urlToken || "");
+  // }, [searchParams]);
+
+  // useEffect(() => {
+  //   setError(false);
+  //   if (token.length > 0) {
+  //     verifyUser();
+  //   }
+  // }, [token, verifyUser]);
+
   return (
     <>
       <div className="main">
@@ -51,10 +57,11 @@ export default function VerifyEmailPage() {
                 state="in-reveal"
                 style={{ width: "150px", height: "150px" }}
               ></lord-icon>
-              <br/><h2 type="" className="teal-btn">
-            Verified !
-          </h2>
-          <br/>
+              <br />
+              <h2 type="" className="teal-btn">
+                Verified !
+              </h2>
+              <br />
               <Link className="login" href="../login">
                 Login here
               </Link>
@@ -66,9 +73,6 @@ export default function VerifyEmailPage() {
               <h2>Error</h2>
             </div>
           )}
-
-          
-          
 
           {/* Footer Links */}
           <div className="flex justify-center text-xs text-gray-400 gap-4 mt-4">

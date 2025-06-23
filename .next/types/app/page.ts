@@ -1,4 +1,4 @@
-// File: C:\Users\urooj.nadeem\employee-attendance-portal\src\app\page.js
+// File: D:\GVS-Development\internee-project\Human-Resource-Management\src\app\page.jsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

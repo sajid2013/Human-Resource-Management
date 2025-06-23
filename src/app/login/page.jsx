@@ -79,10 +79,8 @@ export default function LoginPage() {
           <button type="submit" className="teal-btn" disabled={loading}>
             {loading ? <DotLoader /> : "Login"}
           </button>
-
-          {/* Don't have an account */}
           <div className="text-center text-sm text-gray-600">
-            Don't have an account?{" "}
+            <p>Don&rsquo;t have an account? Sign up here.</p>
             <a href="../signup" className="login">
               Sign up
             </a>
