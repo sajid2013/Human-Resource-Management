@@ -10,7 +10,7 @@ export default function VerifyEmailPage() {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
-  const verifyUser = async () => {
+  const verifyUser2 = async () => {
     try {
       await axios.post("/api/users/verifyemail", { token });
       setVerified(true);
@@ -35,7 +35,10 @@ export default function VerifyEmailPage() {
       verifyUser();
     }
   }, [token]);
-
+  
+const verifyUser = useCallback(() => {
+  verifyUser2()
+}, [token]); // Add dependencies if needed
   return (
     <>
       <div className="main">
