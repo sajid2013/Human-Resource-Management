@@ -119,7 +119,7 @@ export default function SignupPage() {
           {/* Already have account */}
           <div className="text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <a href="../login" className="login">
+            <a href="/Human-Resource-Management/login" className="login">
               Login
             </a>
           </div>
