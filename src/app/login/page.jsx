@@ -81,7 +81,7 @@ export default function LoginPage() {
           </button>
           <div className="text-center text-sm text-gray-600">
             <p>Don&rsquo;t have an account? Sign up here.</p>
-            <a href="/Human-Resource-Management/signup" className="login">
+            <a href="../signup" className="login">
               Sign up
             </a>
           </div>

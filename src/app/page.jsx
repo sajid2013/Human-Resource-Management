@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="">
-     <a href="/Human-Resource-Management/signup">signup</a>
+     <a href="/signup">signup</a>
     </main>
   );
 }
