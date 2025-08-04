@@ -1,0 +1,42 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #95c0f4;
+$skylight: #f3f4f6;
+$purple: #c9b4dd ;
+$purplelight: #c4b5fd;
+$yellow: hsl(204, 38%, 74%);
+$yellowlight: #fcd34d;
+.right-main {
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .map-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .map-div {
+      padding: 20px;
+      border-radius: 16px;
+      border-width: 2px;
+      border-color: #f3f4f6;
+      border-top-width: 4px;
+
+      &:nth-child(odd) {
+        border-top-color: $sky;
+      }
+
+      &:nth-child(even) {
+        border-top-color: $purple;
+      }
+    }
+  }
+}

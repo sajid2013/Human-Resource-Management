@@ -1,0 +1,22 @@
+import { connect } from "../../../../db/db";
+import { NextResponse } from "next/server";
+
+
+export async function POST(request) {
+   console.log("Logout API hit");
+  try {
+    await connect();
+    const response = NextResponse.json(
+      { message: "Logged out Successfully!" },
+      { status: 200 }
+    );
+    response.cookies.set("token", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+
+    return response;                                                                                                                                                                                                                                                                                                                                                                                     
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }));
+  }
+}

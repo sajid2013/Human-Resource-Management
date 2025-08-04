@@ -1,0 +1,40 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #95c0f4;
+$skylight: #f3f4f6;
+$purple: #c9b4dd;
+$purplelight: #c4b5fd;
+$yellow: #a4c2d6;
+$yellowlight: #fcd34d;
+$greenlight: #c3ebda;
+.main-countchart {
+  background-color: white;
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+
+    .circlesss {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

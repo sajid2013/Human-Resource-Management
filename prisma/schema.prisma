@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String? @unique
+  username String @unique
+  access        String?         @default("admin")
+
+}
+
+model Employee {
+  id            String          @id @default(auto()) @map("_id") @db.ObjectId
+  username      String          @unique
+  firstName     String
+  lastName      String
+  email         String?         @unique
+  phone         String?         @unique
+  role          String?
+  img           String?
+  access        String?         @default("employee")
+  remainingLeaves Int?           @default(0)
+  totalLeaves   Int?           @default(0)
+  createdAt     DateTime        @default(now())
+  projects      Project[]
+  attendances   Attendance[]
+  announcements Announcement[]
+  assignments   Assignment[]
+  departmentId  String?         @db.ObjectId
+  department    Department?     @relation("DepartmentEmployees", fields: [departmentId], references: [id])
+  // trainings                                 
+}
+
+model Department {
+  id             String     @id @default(auto()) @map("_id") @db.ObjectId
+  departmentName String?    @unique
+  totalEmployees Int
+  floor          String?
+  supervisor     String?
+  projects       Project[]
+  employees      Employee[] @relation("DepartmentEmployees")
+}
+
+model Project {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  projectName  String
+  startDate    DateTime
+  endDate      DateTime
+  department   Department?   @relation(fields: [departmentId], references: [id])
+  departmentId String?       @db.ObjectId
+  employees    Employee?     @relation(fields: [employeeId], references: [id])
+  employeeId   String?       @db.ObjectId
+  assignments  Assignment[]
+}
+
+model Assignment {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  startDate  DateTime
+  dueDate    DateTime
+  project    Project?  @relation(fields: [projectId], references: [id])
+  projectId  String?   @db.ObjectId
+  employee   Employee? @relation(fields: [employeeId], references: [id])
+  employeeId String    @db.ObjectId
+}
+
+// trainings
+// performance
+
+model Attendance {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  date       DateTime @default(now())
+  status String
+  employeeId String    @map("employee_id") @db.ObjectId
+  employee   Employee? @relation(fields: [employeeId], references: [id])
+ 
+}
+
+model Announcement {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  date       DateTime  @default(now())
+  employeeId String?    @map("employee_id") @db.ObjectId
+  employee   Employee? @relation(fields: [employeeId], references: [id])
+}
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}

@@ -1,0 +1,43 @@
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$sky: #c3ebfa;
+$skylight: #edf9fd;
+$purple: #cfceff;
+$purplelight: #f1f0ff;
+$yellow: #fae27c;
+$yellowlight: #fefce8;
+
+.main-departments {
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+  flex: 1 1 0%;
+  margin: 16px;
+  margin-top: 0;
+
+  .search-nav {
+    color: gray;
+    width: 100%;
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+      border-radius: 9999px;
+      gap: 8px;
+      font-size: smaller;
+      box-shadow: 0 0 0 1.5px #d1d5db;
+      background-color: transparent;
+      color: gray;
+      place-content: white;
+      padding-left: 8px;
+    }
+
+    .search-input {
+      width: 200px;
+      padding: 8px;
+      background-color: transparent;
+      color: white;
+      outline: none;
+    }
+  }
+}
