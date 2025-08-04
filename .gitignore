@@ -1,7 +1,7 @@
 node_modules/
 .next/
 .env
-                                                                                                                                                            
+package-lock.zip                                                                                                                                                  
 /src/generated/prisma
 
 /generated/prisma
